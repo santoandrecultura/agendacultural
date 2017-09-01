@@ -44,28 +44,29 @@
         <header class="site-header wrap">
             <a href="#main" title="<?php esc_attr_e('Ir para o conteúdo', 'cultural'); ?>" class="assistive-text"><?php _e('Ir para o conteúdo', 'cultural'); ?></a>
 
-            <ul id="tabs-menu-handler" class="toggle-bar">
+            <!--<ul id="tabs-menu-handler" class="toggle-bar">
                 <li><a href="#tabs-1" class="current main-toggle" data-tab="tab-1"><i class="fa fa-list-ul"></i></a></li>
                 <?php if (is_active_sidebar('header-widget-area')) : ?>
                     <li><a href="#tab-2" class="highlights-toggle" data-tab="tab-2"><i class="fa fa-search"></i></a></li>
                 <?php endif; ?>
                 <li><a href="#tab-3" class="calendar-toggle" data-tab="tab-3"><i class="fa fa-calendar"></i></a></li>
-            </ul>
+            </ul>-->
 
 			<div class="toggle-bar hidden" id="mobile-menu-handler">
 				<a href="#tab-2" class="highlights-toggle alignright" data-tab="tab-2"><i class="fa fa-bars"></i></a> &nbsp;
 			</div>
 
-            <div id="share-buttons">
+            <!--<div id="share-buttons">
                 <span><?php _e("Compartilhe:","cultural");?></span>
                 <a href="#" title="<?php esc_attr_e('Compartilhar no Facebook', 'cultural'); ?>" class="facebook js-share"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/facebook_button_share.png" alt="Facebook"></a>
                 <a href="#" title="<?php esc_attr_e('Compartilhar no Twitter', 'cultural'); ?>" class="twitter js-share"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/twitter_button_share.png" alt="Twitter"></a>
                 <a href="#" title="<?php esc_attr_e('Compartilhar no Google Plus', 'cultural'); ?>" class="gplus js-share"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/gplus_button_share.png" alt="Google+"></a>
-            </div>
+            </div>-->
 
             <div id="tabs" class="toggle-tabs">
                 <div class="site-header-inside">
                     <!-- Logo, description and main navigation -->
+               
                     <div id="tab-1" class="tab-content current animated fadeIn">
                         <nav id="mobile-nav" class="hidden" role="navigation">
 							<?php wp_nav_menu(array('theme_location' => 'mobile', 'container' => false, 'menu_class' => 'menu--mobile  menu', 'fallback_cb' => false)); ?>

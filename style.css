@@ -511,10 +511,10 @@ img.aligncenter {
   overflow: scroll;
   overflow-x: hidden;
   padding: 1.5rem;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   transform: translate(0, 0);
-  width: 20%;
+  width: 20%; 
   z-index: 100;
   -webkit-overflow-scrolling: touch; }
 
@@ -582,7 +582,7 @@ img.aligncenter {
 .main {
   display: inline-block;
   padding: 2%;
-  padding-left: 22%;
+  /* padding-left: 22%; */
   width: 100%; }
 
 @media (max-width: 768px) {
@@ -2067,3 +2067,13 @@ button.mfp-arrow-left {
     display: none; } }
 
 /*# sourceMappingURL=style.css.map */
+
+/* Agenda Cuiltural Santo André */
+.site-header{
+	width:100%;
+	position: none !important;	
+}
+
+#menu-linguagens{
+	display: inline-flex;	
+}
