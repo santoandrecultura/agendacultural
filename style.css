@@ -2074,6 +2074,17 @@ button.mfp-arrow-left {
 	position: none !important;	
 }
 
-#menu-linguagens{
-	display: inline-flex;	
+@media screen and (min-width: 500px){
+
+	#menu-linguagens{
+		display: inline-flex;	
+	}
+}
+.branding img{
+	display: block !important;
+	margin: auto;		
+}
+
+.access {
+	text-align:center;
 }
