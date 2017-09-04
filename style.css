@@ -2074,10 +2074,15 @@ button.mfp-arrow-left {
 	position: none !important;	
 }
 
-@media screen and (min-width: 500px){
+@media screen and (min-width: 450px){
 
 	#menu-linguagens{
 		display: inline-flex;	
+	}
+	
+	.menu{
+		display: inline-flex;	
+	
 	}
 }
 .branding img{
