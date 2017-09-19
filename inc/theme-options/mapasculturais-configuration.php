@@ -442,6 +442,8 @@ class MapasCulturaisConfiguration {
                 <li><a href="#tab-agentes"><?php _e("Agentes Culturais","cultural");?></a></li>
                 <li><a href="#tab-espacos"><?php _e("Espaços","cultural");?></a></li>
                 <li><a href="#tab-projetos"><?php _e("Projetos/Editais","cultural");?></a></li>
+				<!-- acscpsa -->
+                <li><a href="#tab-projetos"><?php _e("Tags","cultural");?></a></li>
             </ul>
 
             <div id="tab-geral" class='config-tab'>
@@ -624,6 +626,15 @@ class MapasCulturaisConfiguration {
                     <input type="submit" class="button-primary alignright" value="<?php _e('Salvar Filtros', 'cultural'); ?>" />
                 </div>
                 <div id="project-container" class="entity-container js-entity-container"></div>
+            </div>
+           <div id="tab-tags" class="entity-tab">
+                <div class="entity-header">
+                    <label><?php _e("Buscar tags:","cultural");?> </label>
+                    <input  type='text' class='entity-autocomplete' data-entity='tags'/>
+                    <input type="submit" class="button-primary alignright" value="<?php _e('Salvar Filtros', 'cultural'); ?>" />
+                </div>
+                <div id="agent-container" class="entity-container js-entity-container">
+                </div>
             </div>
         </div>
         <?php

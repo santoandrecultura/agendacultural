@@ -126,7 +126,7 @@ if(is_category()){
                     <!--<a href="{{event.singleUrl}}" target="_blank"><i class="fa fa-external-link"></i></a>-->
                     <span class="event__subtitle">{{event.subTitle}}</span>
                 </h1>
-
+				<div class="conteudo_curto">{{event.shortDescription}}</div>
 
                 <div class="event__occurrences" ng-repeat="occs in event.occurrences" ng-if="occs.inPeriod">
                     <div class="event__venue">
@@ -136,9 +136,9 @@ if(is_category()){
                     <!--a href="#" class="js-more-occurrences"><i class="fa fa-plus-circle"></i></a-->
                 </div>
 
-                <div class="event__languages" style="margin: -10px 0 10px 0">
+               <!-- <div class="event__languages" style="margin: -10px 0 10px 0">
                     <h4 class="event__languages--title">{{event.terms.linguagem.length == 1 ? '<?php _e('Linguagem', 'cultural'); ?>' : '<?php _e('Linguagens', 'cultural'); ?>'}}:</h4> {{event.terms.linguagem.join(', ')}}
-                </div>
+                </div>-->
                 <span class="event__classification">{{event.classificacaoEtaria}}</span>
 
                 <div class="event__price">
@@ -153,14 +153,14 @@ if(is_category()){
                 <div ng-if="event.traducaoLibras == 'Sim' && event.descricaoSonora != 'Sim'" class="event__accessibility"><strong>acessibilidade:</strong> Tradução para LIBRAS</div>
                 <div ng-if="event.traducaoLibras != 'Sim' && event.descricaoSonora == 'Sim'" class="event__accessibility"><strong>acessibilidade:</strong> Áudio descrição</div>
 
-                <div ng-if="event.project.name">
+                <!--<div ng-if="event.project.name">
                 		<h4><?php _e('Projeto', 'cultural');?>:</h4>                   
                     	<a href="{{event.project.singleUrl}}">{{event.project.name}}</a>
                 </div>
                 <div ng-if="event.owner.name">
                 		<h4><?php _e('Publicado por', 'cultural');?>:</h4>                    
                     <a href="{{event.owner.singleUrl}}">{{event.owner.name}}</a>
-                </div>
+                </div>-->
                 <a href="{{event.singleUrl}}" target="_blank" class="event__info"><?php _e('Mais informações', 'cultural'); ?></a>
             </div>
         </div>

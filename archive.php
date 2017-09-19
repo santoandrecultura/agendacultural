@@ -77,7 +77,9 @@ if(is_category()){
         </h1>
         <?php if (is_category() && isset($cat_data['use_events']) && $cat_data['use_events']) : ?>
             <a href="<?php echo $agenda_url ?>" class="category-events-link">
-                <?php _e('Ver eventos','cultural');?>
+                <?php
+				$categoria = get_the_category();
+				 _e(strtoupper('Clique para ver todos os eventos de '.$categoria[0]->name),'cultural');?>
                 <i class="fa fa-arrow-right"></i>
             </a>
         <?php endif; ?>

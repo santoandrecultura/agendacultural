@@ -343,3 +343,12 @@ add_action('widgets_init', 'cultural_widgets_init');
 //     }
 //     return $attr;
 // }, 10, 4);
+
+if ( function_exists('register_sidebar') )
+	register_sidebar(array(
+	'name' => 'Rodapé',
+	'before_widget' => '<div class="box">',
+	'after_widget' => '</div>',
+	'before_title' => '<h4>',
+	'after_title' => '</h4>',
+));

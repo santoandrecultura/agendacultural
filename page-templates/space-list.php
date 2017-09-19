@@ -58,12 +58,20 @@ function converterObjParaArray($data) { //função que transforma objeto vindo d
 }
 
 //$url = "http://culturaz.santoandre.sp.gov.br/api/space/describe";
-$url = "http://culturaz.santoandre.sp.gov.br/api/space/find";
+
+$res = $wpdb->get_results("SELECT option_value FROM wp_options WHERE option_name = 'mapasculturais-configuration'");
+
+$opt = get_option('mapasculturais-configuration');
+
+
+
+
+$url = $opt['URL']."/api/space/find";
 
 $data = array(
    	//"@from" => "2017-09-01",
 	//"@to" => "2017-09-30",
-	"@select" => "id, name,endereco,singleUrl,telefone1,telefone2,telefone3",
+	"@select" => "id, name,endereco,singleUrl,shortDescription, telefonePublico,emailPublico,parent",
 	"@seals" => "1,2,3",
 	"@order" => "name ASC"
 	//"owner" => "IN(870,105)",
@@ -106,25 +114,32 @@ $ccsp = converterObjParaArray($evento);
     </article>
     <?php endif; ?>
 
-<h1><?php the_title(); ?></h1>
- 
+<header class="page-header"><h1 class="page-title"><?php the_title(); ?></h1></header>
+
+
     
     <div class="events-list grid js-events-masonry" >
 
 <?php 
 for($i = 0; $i < count($ccsp); $i++){
-	if($ccsp[$i]['endereco'] != ""){
+	if($ccsp[$i]['endereco'] != "" AND $ccsp[$i]['parent'] == "" ){
 	?>
 
 
-        <div class="event  event-container" >
+        <div class="event espaco  event-container" >
             <div class="event-data">
                 <h1 class="event__title">
+
                     <?php echo $ccsp[$i]['name']?>
                     <!--<a href="{{event.singleUrl}}" target="_blank"><i class="fa fa-external-link"></i></a>-->
                     
                 </h1>
-				<p><?php echo $ccsp[$i]['endereco']; ?></p>    
+  
+				<p><i><?php echo $ccsp[$i]['shortDescription']; ?></i></p>    
+				<p><strong>Endereço:</strong> <?php echo $ccsp[$i]['endereco']; ?></p>  
+				<p><strong>Telefone:</strong> <?php echo $ccsp[$i]['telefonePublico']; ?></p>    
+				<p><strong>Email:</strong> <?php echo $ccsp[$i]['emailPublico']; ?></p>    
+
                 <a href="<?php echo $ccsp[$i]['singleUrl']; ?>" target="_blank" class="event__info"><?php _e('Mais informações', 'cultural'); ?></a>
             </div>
         </div>
