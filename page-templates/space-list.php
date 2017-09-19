@@ -124,8 +124,6 @@ $ccsp = converterObjParaArray($evento);
 for($i = 0; $i < count($ccsp); $i++){
 	if($ccsp[$i]['endereco'] != "" AND $ccsp[$i]['parent'] == "" ){
 	?>
-
-
         <div class="event espaco  event-container" >
             <div class="event-data">
                 <h1 class="event__title">
