@@ -1,0 +1,15 @@
+
+Subir o serviço (local e data)
+Inverter data e local
+Destaque para data (icone de calendario)
+Local (pin de mapa)
+icone para faixa etária
+icone para preço
+
+Culturômetro
+
+Descer a sinopse 
+
+Programação na sequência
+
+Imagem do CulturAZ vem cortado(verificar);

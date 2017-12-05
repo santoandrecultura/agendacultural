@@ -5,7 +5,7 @@
         var svc = {}, //this, the service
             filtersSkeleton = {
             startDate : moment(),
-            endDate : moment().add(15, 'days'),
+            endDate : moment().add(30, 'days'),
             linguagens: [],
             classificacoes: []
         };
@@ -22,7 +22,7 @@
                 '@select': 'id,singleUrl,name,subTitle,type,shortDescription,terms,classificacaoEtaria,traducaoLibras,descricaoSonora,owner.name,owner.singleUrl,project.name,project.singleUrl,occurrences.{rule,space.{id,name,singleUrl,shortDescription}}',
 //                '@page': 1,
 //                '@limit': 10,
-                '@files': '(header.header,avatar.avatarBig):url',
+                '@files': '(header,avatar.avatarBig):url',
                 '@from': svc.data.startDate.format('YYYY-MM-DD'),
                 '@to': svc.data.endDate.format('YYYY-MM-DD')
             };
@@ -48,17 +48,24 @@
             // se tem filtro selecionado na busca
             if(svc.data.linguagens && svc.data.linguagens.length){
                 //console.log('0');
-                searchParams['term:linguagem'] = 'IN(' + svc.data.linguagens.sort().toString() + ')';
+					var termo_linguagem = 'IN(' + vars.categoryFilters.linguagens.sort().toString() + ')';
+                    //searchParams['term:linguagem'] = 'IN(' + vars.categoryFilters.linguagens.sort().toString() + ')';
+					searchParams['term:linguagem'] = termo_linguagem.replace(',','\\,');
+				
 
             // ou se está numa categoria tem filtro configurado para a mesma
             }else {
                 if(vars.categoryFilters && vars.categoryFilters.linguagens && vars.categoryFilters.linguagens.length){
                     //console.log('1');
-                    searchParams['term:linguagem'] = 'IN(' + vars.categoryFilters.linguagens.sort().toString() + ')';
+					var termo_linguagem = 'IN(' + vars.categoryFilters.linguagens.sort().toString() + ')';
+                    //searchParams['term:linguagem'] = 'IN(' + vars.categoryFilters.linguagens.sort().toString() + ')';
+					searchParams['term:linguagem'] = termo_linguagem.replace(',','\\,');
 
                 }else if(!vars.generalFilters.empty.linguagens && vars.generalFilters.linguagens && vars.generalFilters.linguagens.length){
                     //console.log('2');
-                    searchParams['term:linguagem'] = 'IN(' + vars.generalFilters.linguagens.sort().toString() + ')';
+					var termo_linguagem = 'IN(' + vars.categoryFilters.linguagens.sort().toString() + ')';
+                    //searchParams['term:linguagem'] = 'IN(' + vars.categoryFilters.linguagens.sort().toString() + ')';
+					searchParams['term:linguagem'] = termo_linguagem.replace(',','\\,');
                 }
             }
 

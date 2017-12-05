@@ -117,8 +117,8 @@ if(is_category()){
         <div class="gutter-sizer"></div>
 
         <div class="event  event-container" ng-repeat="event in events" repeat-done="updateMasonry()">
-            <figure ng-if="event['@files:header.header']" class="event__image" style="background:transparent" >
-                <img src="{{event['@files:header.header'].url}}" alt="{{event.name}}" style="width:100%"/>
+            <figure ng-if="event['@files:header']" class="event__image" style="background:transparent" >
+                <img src="{{event['@files:header'].url}}" alt="{{event.name}}" style="width:100%"/>
             </figure>
             <div class="event-data">
                 <h1 class="event__title">
@@ -129,23 +129,24 @@ if(is_category()){
 				<div class="conteudo_curto">{{event.shortDescription}}</div>
 
                 <div class="event__occurrences" ng-repeat="occs in event.occurrences" ng-if="occs.inPeriod">
-                    <div class="event__venue">
+                    <div class="event__time"><img class="icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/cal.png" /> {{occs.rule.description}}</div>
+
+				<div class="event__venue"><img class="icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/marcador.png" />
                         <a href="{{occs.space.singleUrl}}">{{occs.space.name}}</a>
                     </div>
-                    <div class="event__time">{{occs.rule.description}}</div>
                     <!--a href="#" class="js-more-occurrences"><i class="fa fa-plus-circle"></i></a-->
                 </div>
 
                <!-- <div class="event__languages" style="margin: -10px 0 10px 0">
                     <h4 class="event__languages--title">{{event.terms.linguagem.length == 1 ? '<?php _e('Linguagem', 'cultural'); ?>' : '<?php _e('Linguagens', 'cultural'); ?>'}}:</h4> {{event.terms.linguagem.join(', ')}}
                 </div>-->
-                <span class="event__classification">{{event.classificacaoEtaria}}</span>
+                <span class="event__classification"><img class="icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/verificado.png" />{{event.classificacaoEtaria}}</span>
 
                 <div class="event__price">
-                    <span class="fa-stack">
+                    <!--<span class="fa-stack">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-usd fa-stack-1x fa-inverse"></i>
-                    </span>
+                    </span>--><img class="icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/preco.png" />
                     {{event.occurrences[0].rule.price}}
                 </div>
 
@@ -153,11 +154,11 @@ if(is_category()){
                 <div ng-if="event.traducaoLibras == 'Sim' && event.descricaoSonora != 'Sim'" class="event__accessibility"><strong>acessibilidade:</strong> Tradução para LIBRAS</div>
                 <div ng-if="event.traducaoLibras != 'Sim' && event.descricaoSonora == 'Sim'" class="event__accessibility"><strong>acessibilidade:</strong> Áudio descrição</div>
 
-                <!--<div ng-if="event.project.name">
-                		<h4><?php _e('Projeto', 'cultural');?>:</h4>                   
+               <div ng-if="event.project.name">
+                		<h4><?php _e('', 'cultural');?></h4>                   
                     	<a href="{{event.project.singleUrl}}">{{event.project.name}}</a>
                 </div>
-                <div ng-if="event.owner.name">
+                <!--<div ng-if="event.owner.name">
                 		<h4><?php _e('Publicado por', 'cultural');?>:</h4>                    
                     <a href="{{event.owner.singleUrl}}">{{event.owner.name}}</a>
                 </div>-->

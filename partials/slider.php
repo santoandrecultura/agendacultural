@@ -7,6 +7,8 @@
 ?>
 
 <?php
+if(!is_category('culturometro')){
+
 $args = array('ignore_sticky_posts' => 1, 'posts_per_page' => '4');
 
 $featured_posts = Cultural_Hightlights::getHighlightedQuery();
@@ -42,3 +44,4 @@ if ($featured_posts->have_posts()) :
     </div>
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
+<?php } ?>

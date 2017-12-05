@@ -64,3 +64,6 @@ Você pode adicionar caixas de serviço de eventos utilizando o shortcode **[eve
 ## Plugins recomendados
 - [WordPress SEO by Yoast](https://wordpress.org/plugins/wordpress-seo/)
 - [Custom Favicon](https://wordpress.org/plugins/custom-favicon/])
+
+## Otimização SCPSA
+- cor: #0974a3
